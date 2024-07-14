@@ -11,3 +11,18 @@
     height: 100vh;
 }
 
+.carousel {
+    width: 900px;
+    height: 400px;
+    background-color: aqua;
+}
+
+.images {
+    height: 100%;
+}
+
+.main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
