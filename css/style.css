@@ -28,6 +28,15 @@
     object-fit: cover;
 }
 
+.txt-image {
+    position: absolute;
+    bottom: 20px;
+    right:20px;
+    color: #ffff;
+    padding: 20px;
+    background-color: rgba(0,0,0,0.5);
+}
+
 .prev, 
 .next {
     top:50%;
