@@ -14,7 +14,7 @@
 .carousel {
     width: 900px;
     height: 400px;
-    background-color: aqua;
+    position: relative;
 }
 
 .images {
@@ -30,10 +30,10 @@
 
 .txt-image {
     position: absolute;
-    bottom: 20px;
-    right:20px;
+    bottom: 0px;
+    right: 0px;
     color: #ffff;
-    padding: 20px;
+    padding: 10px 20px;
     background-color: rgba(0,0,0,0.5);
 }
 

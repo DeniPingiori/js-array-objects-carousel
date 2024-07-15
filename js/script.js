@@ -24,10 +24,13 @@ const images = [
 
 //definisco le variabili
 let itemsContent = ''; //definisco la var che contiene le imgs nella sezione principale
+let activeElement = 0; //definizione variabile che contiene l'indice dell'img attiva
+
+
 //ciclo l'array e concateno ad itemsContent l'html delle imgs con il testo
 images.forEach((elem) => {
     itemsContent += `
-    <div class="position-relative h-100">
+    <div class="image position-relative h-100">
     <img src="./${elem.image}" class="main-image" alt="${elem.title}">
         <div class="txt-image">
         <h3>${elem.title}</h3>
@@ -38,3 +41,9 @@ images.forEach((elem) => {
 
 //recupero l'elemento dal dom che deve contenere le imgs
 document.querySelector('#my-carousel-container .images').innerHTML = itemsContent;
+
+//recupero il primo elemento con la classe image e classe d-none per toglierla
+console.log(document.querySelectorAll('.image'));
+console.log(document.querySelectorAll('.image')[activeElement]);
+
+document.querySelectorAll('.image')[activeElement].classList.remove('d-none');
