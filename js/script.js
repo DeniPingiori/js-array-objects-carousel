@@ -55,7 +55,14 @@ allImages[activeElement].classList.remove('d-none'); //tolgo la classe d-one
 next.addEventListener('click', function(){
     allImages[activeElement].classList.add('d-none');//aggiungo all'elem attuale la classe d-none
 
-    activeElement++; //incremento val dell'indice
+    //aggiungo ciclo infinito
+    if(activeElement == allImages.length -1){
+        activeElement = 0;
+    }
+    else {
+        activeElement++; //incremento val dell'indice
+    }
+    
 
     allImages[activeElement].classList.remove('d-none');//rimuovo la classe d-none
 });
@@ -64,7 +71,14 @@ next.addEventListener('click', function(){
 prev.addEventListener('click', function(){
     allImages[activeElement].classList.add('d-none');//aggiungo all'elem attuale la classe d-none
 
-    activeElement--; //incremento val dell'indice
+    if(activeElement == 0) {
+        activeElement = allImages.length-1;
+    }
+    else {
+        activeElement--; //decremento val dell'indice
+    }
+        
+   
 
     allImages[activeElement].classList.remove('d-none');//rimuovo la classe d-none
 });
