@@ -26,6 +26,8 @@ const images = [
 let itemsContent = ''; //definisco la var che contiene le imgs nella sezione principale
 let activeElement = 0; //definizione variabile che contiene l'indice dell'img attiva
 
+const prev = document.querySelector('.prev');
+const next = document.querySelector('.next');
 
 //ciclo l'array e concateno ad itemsContent l'html delle imgs con il testo
 images.forEach((elem) => {
@@ -46,4 +48,23 @@ document.querySelector('#my-carousel-container .images').innerHTML = itemsConten
 console.log(document.querySelectorAll('.image'));
 console.log(document.querySelectorAll('.image')[activeElement]);
 
-document.querySelectorAll('.image')[activeElement].classList.remove('d-none');
+let allImages = document.querySelectorAll('.image'); //recupero tutti gli elementi con la classe image
+allImages[activeElement].classList.remove('d-none'); //tolgo la classe d-one
+
+//definisco il comportamento del click della freccia di dx
+next.addEventListener('click', function(){
+    allImages[activeElement].classList.add('d-none');//aggiungo all'elem attuale la classe d-none
+
+    activeElement++; //incremento val dell'indice
+
+    allImages[activeElement].classList.remove('d-none');//rimuovo la classe d-none
+});
+
+//definisco il comportamento del click della freccia di dx
+prev.addEventListener('click', function(){
+    allImages[activeElement].classList.add('d-none');//aggiungo all'elem attuale la classe d-none
+
+    activeElement--; //incremento val dell'indice
+
+    allImages[activeElement].classList.remove('d-none');//rimuovo la classe d-none
+});
